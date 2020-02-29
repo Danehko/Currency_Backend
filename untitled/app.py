@@ -18,10 +18,10 @@ def symbols():
 def convert():
     if request.method == 'GET':
         import requests
-        coin1 = request.args.get('from')
-        coin2 = request.args.get('to')
+        symbolFrom = request.args.get('from')
+        symbolTo = request.args.get('to')
 
-        url = "http://free.currconv.com/api/v7/convert?apiKey=4409081e6078be413a53&q={}_{}".format(coin1,coin2)
+        url = "http://free.currconv.com/api/v7/convert?apiKey=4409081e6078be413a53&q={}_{}".format(symbolFrom,symbolTo)
         print(url)
         payload = {}
         headers = {}
