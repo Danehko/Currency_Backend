@@ -5,12 +5,28 @@ app = Flask(__name__)
 
 @app.route('/symbols', methods = ['GET'])
 def symbols():
-    import requests
     if request.method == 'GET':
-        url = "http://data.fixer.io/api/symbols?access_key=471edf9bc157d6741d4bb23b556de379"
+        import requests
+        url = "https://free.currconv.com/api/v7/currencies?apiKey=4409081e6078be413a53"
         payload = {}
         headers = {}
         response = requests.request("GET", url, headers=headers, data=payload)
         return json.loads(response.text.encode('utf8'))
+
+
+@app.route('/convert', methods = ['GET'])
+def convert():
+    if request.method == 'GET':
+        import requests
+        coin1 = request.args.get('from')
+        coin2 = request.args.get('to')
+
+        url = "http://free.currconv.com/api/v7/convert?apiKey=4409081e6078be413a53&q={}_{}".format(coin1,coin2)
+        print(url)
+        payload = {}
+        headers = {}
+        response = requests.request("GET", url, headers=headers, data=payload)
+        return json.loads(response.text.encode('utf8'))
+
 if __name__ == '__main__':
     app.run(host='127.0.0.1', debug=True)
