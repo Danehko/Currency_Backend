@@ -28,7 +28,7 @@ Boa sorte!
 ### Requisitos para execução
 - Python 3.8.2 (sudo apt-get install python3)
 - Criar um ambiente virtual (venv) com as bibliotecas: flask, flask-cors, request
-- Instalar a biblioteca simplejson
+- Instalar a biblioteca simplejson (pip install simplejson)
 - Para rodar o Backend: python3 app.py (Foi utilizada a IDE PyCharm)
 ### Rotas
 - http://127.0.0.1:5000/symbols - Rota que lista algumas moedas. Mostrando nome, sigla e símbolo caso possua.
@@ -36,5 +36,6 @@ Boa sorte!
 ### API de terceiros
 - https://free.currconv.com
 ### Material e Programas de apoio
+- https://www.treinaweb.com.br/blog/criando-ambientes-virtuais-para-projetos-python-com-o-virtualenv/
 - Postman
 - https://flask-cors.readthedocs.io/en/latest/
