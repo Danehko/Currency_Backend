@@ -1,9 +1,12 @@
 from flask import Flask, render_template, session, url_for, redirect, flash, request
+from flask_cors import CORS, cross_origin
 import simplejson as json
 
 app = Flask(__name__)
+cors = CORS(app)
 
 @app.route('/symbols', methods = ['GET'])
+@cross_origin()
 def symbols():
     if request.method == 'GET':
         import requests
@@ -15,6 +18,7 @@ def symbols():
 
 
 @app.route('/convert', methods = ['GET'])
+@cross_origin()
 def convert():
     if request.method == 'GET':
         import requests
